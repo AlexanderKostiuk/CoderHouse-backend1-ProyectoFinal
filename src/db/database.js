@@ -1,6 +1,10 @@
 import mongoose from 'mongoose';
+import 'dotenv/config';
 
-const connectionString = 'mongodb://127.0.0.1:27017/coder69900';
+
+/* const connectionString = 'mongodb://127.0.0.1:27017/coder69900'; */
+const connectionString = process.env.MONGO_URL || ''
+
 
 export const initMongoDB = async() => {
   try {

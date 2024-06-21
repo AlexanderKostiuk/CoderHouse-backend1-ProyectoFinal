@@ -7,6 +7,7 @@ import cartRouter from './routes/cart.router.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { initMongoDB } from './db/database.js';
 import { __dirname } from './utils.js';
+import 'dotenv/config';
 
 const app = express();
 
@@ -28,7 +29,7 @@ app.use(errorHandler);
 
 initMongoDB();
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => console.log(`SERVER UP ON PORT ${PORT}`));
 
